@@ -1,34 +1,39 @@
-# 🔬 פרויקט ניתוח נתונים: אשכולות ואבחון נתוני סרטן שד (WDBC)
+🔬 Data Analysis Project: Breast Cancer Data Clustering and Diagnosis (WDBC)
+This is a comprehensive data analysis project developed as part of the Machine Learning coursework for my Data Engineering B.Sc. at Bar-Ilan University. The project's objective is to evaluate the effectiveness of unsupervised machine learning algorithms in identifying patterns and efficiently clustering medical observations.
+The project is implemented using a Jupyter Notebook and presents complete analytical results.
 
-זהו פרויקט אנליזה מקיף שנכתב כחלק מדרישות הקורס [שם הקורס: לדוגמה, מבוא ללמידת מכונה / מדעי הנתונים]. מטרת הפרויקט היא לבחון את היעילות של אלגוריתמי למידת מכונה ללא פיקוח (Unsupervised Learning) בזיהוי דפוסים וקיבוץ יעיל של תצפיות רפואיות.
+🎯 Methodology and Analysis Stages
+The project is divided into three main stages:
 
-הפרויקט מבוצע באמצעות Jupyter Notebook ומציג תוצאות אנליטיות מלאות.
+1. Data Preprocessing:
 
-## 🎯 מתודולוגיה ושלבי אנליזה
+Loading the dataset (breast_cancer.csv).
 
-הפרויקט מחולק לשלושה שלבים עיקריים:
+Normalizing the data using StandardScaler to ensure equal weight across all features.
 
-1.  **ניקוי ועיבוד נתונים (Preprocessing):**
-    * טעינת נתונים (קובץ `breast_cancer.csv`).
-    * נרמול הנתונים באמצעות `StandardScaler` כדי להבטיח משקל שווה לכל ה-Features.
-    * המרה של תוויות אבחון (M/B) לערכים נומריים (1/0) לצורך הערכת ביצועים.
+Converting diagnostic labels (M/B) into numerical values (1/0) for performance evaluation purposes.
 
-2.  **הפחתת מימד (Dimensionality Reduction):**
-    * שימוש ב-**Principal Component Analysis (PCA)** כדי לצמצם את מרחב התכונות המורכב לשני רכיבים עיקריים (`n_components=2`).
+2. Dimensionality Reduction:
 
-3.  **אשכולות והערכה (Clustering & Evaluation):**
-    * הפרויקט בחן מספר אלגוריתמי אשכולות, כולל **K-Means**, **Agglomerative Clustering** ו-**DBSCAN**.
+Applying Principal Component Analysis (PCA) to reduce the complex feature space into two principal components (n_components=2).
 
-    * **הישג מרכזי:** אלגוריתם **K-Means** סיפק את האשכולות הברורים ביותר גרפית. הציון הגבוה ביותר שהושג במדד **Silhouette Score** היה **0.5369**, המעיד על הפרדת אשכולות יעילה.
-    * ההערכה בוצעה באמצעות מדדי דיוק (Accuracy) ומטריצת בלבול (Confusion Matrix) להשוואת האשכולות לתוויות האבחון המקוריות.
+3. Clustering & Evaluation:
 
-## 📁 מבנה המאגר
-* **`ProjectCancer_New.ipynb`:** קובץ Jupyter Notebook המכיל את הקוד, האנליזה והתוצאות.
-* **`breast_cancer.csv`:** קובץ הנתונים המקורי (WDBC).
-* **`wdbc.data` / `wdbc.names`:** קובצי עזר לתיאור המשתנים.
+The project examined several clustering algorithms, including K-Means, Agglomerative Clustering, and DBSCAN.
 
-## 🛠️ דרישות מערכת
-כדי להריץ את הקוד, יש צורך בסביבת Python 3 עם הספריות הבאות:
+Key Achievement: The K-Means algorithm provided the clearest visual clustering. The highest score achieved on the Silhouette Score metric was 0.5369, indicating highly effective cluster separation.
 
-```bash
+The final evaluation was conducted using Accuracy metrics and a Confusion Matrix to compare the model's clusters against the original diagnostic labels.
+
+📁 Repository Structure
+ProjectCancer_New.ipynb: The Jupyter Notebook containing the code, data analysis, and visual results.
+
+breast_cancer.csv: The original dataset (WDBC).
+
+wdbc.data / wdbc.names: Auxiliary files describing the dataset variables.
+
+🛠️ System Requirements
+To run the code, a Python 3 environment is required along with the following libraries. You can install them using:
+
+Bash
 pip install pandas numpy matplotlib seaborn scikit-learn jupyter
